@@ -1,0 +1,12 @@
+{
+  "name": "octokit-plus-file-downloader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Wojciech Mikusek",
+  "license": "ISC",
+  "dependencies": {
+    "@octokit/core": "^3.5.1",
+    "nodejs-file-downloader": "^4.7.4"
+  }
+}
