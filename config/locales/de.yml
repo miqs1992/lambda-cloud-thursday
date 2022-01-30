@@ -1,0 +1,10 @@
+---
+pl:
+  activerecord:
+    attributes:
+      user:
+        avatar: Benutzerbild
+        email: E-Mail-Addresse
+        encrypted_password: Verschlüsseltes Passwort
+        first_name: Vorname
+        last_name: Nachname
