@@ -10,11 +10,11 @@ const head = `cloud-thursday-${new Date().toISOString().slice(0, 16).replace(':'
 function getRepoWithSparse(path) {
     console.log("Fetching repo with sparse...");
     process.chdir(`/tmp`);
-    execSync(`git clone --filter=blob:none --no-checkout --quiet https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@${gitRepositoryURL}`);
+    execSync(`git clone --no-checkout --quiet https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@${gitRepositoryURL}`);
 	execSync(`cd ${repo}`);
     process.chdir(`/tmp/${repo}`);
 	execSync(`git sparse-checkout set ${path}`);
-	execSync(`git read-tree -mu HEAD`);
+	execSync(`git checkout`);
 	console.log("Done!");
 }
 

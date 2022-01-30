@@ -1,5 +1,6 @@
 const git = require('./src/git');
 const bash = require('./src/bash');
+const { download } = require('./src/download');
 
 exports.handler = async (event) => {
     // bash.clear('/tmp');
@@ -11,8 +12,8 @@ exports.handler = async (event) => {
     bash.list(".");
     
     git.createBranch();
-    bash.createFile('config/locales', 'wojtek.txt');
-    await git.commitAndOpenPR("New commit");
+    await download('de.yml', 'config/locales', event.presignedUrl);
+    await git.commitAndOpenPR('New commit');
     
     console.log('Finished!');
     return 'Finished!';
